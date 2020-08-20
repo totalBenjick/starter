@@ -5,12 +5,11 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-
-// import { NavBar } from './NavBar';
-
-// import { AboutScreen } from './AboutScreen';
-// import { LoginScreen } from './LoginScreen';
-// import { HomeScreen } from './HomeScreen';
+import { TopBar } from "./TopBar";
+import { HomeScreen } from "../components/HomeScreen";
+import { MostWatched } from "./MostWatched";
+import { TopFans } from "./TopFans";
+import { WatchNow } from "./WatchNow";
 
 export const AppRouter = () => {
   return (
@@ -20,12 +19,13 @@ export const AppRouter = () => {
 
         <div className="container">
           <Switch>
-            {/* <Route exact path="/" component={ HomeScreen } />
+            <Route exact path="/" component={HomeScreen} />
 
-                        <Route exact path="/about" component={ AboutScreen } />
-                        <Route exact path="/login" component={ LoginScreen } />
-                        
-                        <Redirect to="/" /> */}
+            <Route exact path="/mostwatched" component={MostWatched} />
+            <Route exact path="/topfans" component={TopFans} />
+            <Route exact path="/watchnow" component={WatchNow} />
+
+            <Redirect to="/" />
           </Switch>
         </div>
       </div>
