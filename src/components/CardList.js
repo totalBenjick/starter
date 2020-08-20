@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const CardList = (props) => {
+export const HomeCardList = (props) => {
   const { color, icon, cap, link } = props;
   return (
     <div
