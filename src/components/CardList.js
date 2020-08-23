@@ -14,7 +14,7 @@ export const HomeCardList = (props) => {
         style={{
           backgroundColor: `${color}`,
         }}
-        className="w-90 mt3 mw9 center pa4 pt5-ns ph7-l"
+        className="w-90 mt3 mw9 center pa4 pt5-ns "
       >
         <Link to={`${link}`} className={"no-underline"}>
           <div className="f2 f1-m f-headline-l measure-narrow lh-title mv0">

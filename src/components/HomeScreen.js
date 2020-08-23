@@ -21,7 +21,7 @@ export const HomeScreen = () => {
     {
       color: _2,
       icon: "fa fa-clock-o",
-      cap: "Popular now",
+      cap: "Top Now",
       link: "watchnow",
     },
   ];
