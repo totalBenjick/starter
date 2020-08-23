@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { TopBar } from "./TopBar";
 import { HomeScreen } from "../components/HomeScreen";
-import { MostWatched } from "./MostWatched";
+import { MostWatched } from "./MostWatched/MostWatched";
 import { TopFans } from "./TopFans";
 import { WatchNow } from "./WatchNow";
 

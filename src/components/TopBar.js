@@ -10,7 +10,7 @@ export const TopBar = () => {
       }}
       className={`sans-serif w-100`}
     >
-      <div className="w-100 center pa4 pt5-ns ph7-l">
+      <div className="w-100 center pa4 pt5-ns">
         <div className="f2  w-100 lh-title mv0 inline-flex justify-between content-center">
           <div className=" lh-copy white pa1 tracked-tight">
             {" "}

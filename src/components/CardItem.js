@@ -4,13 +4,13 @@ export const CardItem = (props) => {
   const { img, showName, averageVote } = props;
   let imgLink = `https://image.tmdb.org/t/p/w500/${img}`;
 
-  if (img === null || showName === null || averageVote === null) {
+  if (img === null || showName === null || averageVote === null || averageVote === 0) {
     return <div></div>;
   }
 
   return (
     <>
-      <div className="flex shadow-5 items-center justify-center ma3 ba b--black ba br2 black-70 no-underline grow b inline-flex items-center mb3 pv2 ph3">
+      <div className="shadow-5 ma3 ba b--black self-center br2 black-70 no-underline grow b inline-flex items-center justify-center mb3 pv2 ph3">
         <div className=" sans-serif w-90 flex-column items-center justify-center">
           <a href={``} className="db link dim tc">
             <img
