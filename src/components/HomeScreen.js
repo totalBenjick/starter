@@ -10,19 +10,19 @@ export const HomeScreen = () => {
       color: _0,
       icon: "fa fa-fire",
       cap: "Most Pop",
-      link: "/mostwatched",
+      link: "/mostwatched/1",
     },
     {
       color: _1,
       icon: "fa fa-heart-o",
       cap: "+ Fans",
-      link: "/topfans",
+      link: "/topfans/1",
     },
     {
       color: _2,
       icon: "fa fa-clock-o",
       cap: "Top Now",
-      link: "/trending",
+      link: "/trending/1",
     },
     {
       color: _3,
