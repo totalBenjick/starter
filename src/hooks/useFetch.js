@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 export const useFetch = (url) => {
+  const { loading, setLoading } = useContext(UserContext);
   const isMounted = useRef(true);
   const [state, setState] = useState({
     data: null,
@@ -16,6 +18,7 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     setState({ data: null, loading: true, error: null });
+    setLoading(true);
 
     fetch(url)
       .then((resp) => resp.json())
@@ -27,6 +30,7 @@ export const useFetch = (url) => {
             data,
           });
         }
+        setLoading(false);
       });
   }, [url]);
 
