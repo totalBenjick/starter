@@ -3,13 +3,13 @@ import { AppRouter } from "./AppRouter";
 import { UserContext } from "../context/UserContext";
 
 export const Dashboard = () => {
-  const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
 
   return (
     <UserContext.Provider
       value={{
-        user,
-        setUser,
+        loading,
+        setLoading,
       }}
     >
       <AppRouter />
