@@ -10,6 +10,7 @@ export const SingleView = () => {
 
   // Retrieve show info
   let getTVSeries = `https://api.themoviedb.org/3/tv/${id}?api_key=1a09dcf42c6c621e5b547c2f53c489b3&language=en-US`;
+  // eslint-disable-next-line
   const { loading, data } = useFetch(getTVSeries);
   const genres = data?.genres;
 
@@ -45,11 +46,12 @@ export const SingleView = () => {
     });
   };
 
+  let heart = (favorites.includes(id) && "fa fa-heart ") || "fa fa-heart-o";
+
   const mapGenre = genres?.map((e, i) => e.name);
   const genresToDisplay = mapGenre?.join(", ");
   return (
     <div>
-      <div> {favorites}</div>
       <div className=" helvetica  w-95 pr2-l pl2-ns mb0-l shadow-3 ma2">
         <div className="pa4">
           <img
@@ -57,14 +59,16 @@ export const SingleView = () => {
             alt={` tv series app`}
             className="w-100 db black-10 br2"
           />
-          <i
-            className={`fa fa-heart-o ${styles.heart}`}
-            onClick={handleHeartClick}
-            aria-hidden="true"
-          ></i>
-          <h1 className="f4 f2-l fw7 mt0 pt3 pl3 mid-gray pv3-l dib ">
-            {data?.name}
-          </h1>
+          <div className={`flex flex-row justify-center`}>
+            <i
+              className={`${heart} ${styles.heart} self-center red`}
+              onClick={handleHeartClick}
+              aria-hidden="true"
+            ></i>
+            <h1 className="f4 f2-l fw7 mt0 pt3 pl3 mid-gray pv3-l dib ">
+              {data?.name}
+            </h1>
+          </div>
           <h1 className="f5 f2-l fw7 mt0 pv3-l dark-blue">
             {data?.number_of_episodes} Episodes
           </h1>
