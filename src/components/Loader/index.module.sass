@@ -1,0 +1,38 @@
+
+.container 
+    position: absolute
+    height: 90%
+    width: 90%
+    background-color: white
+    opacity: 1
+    border-radius: 1rem
+    border: 2px
+    box-shadow: 0 0 4px 2px rgba( 0, 0, 0, .2 )
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+    
+.loader 
+  position: absolute
+  top: calc(50% - 2em)
+  left: calc(50% - 2em)
+  width: 6em
+  height: 6em
+  border: 1.1em solid rgba(0, 0, 0, 0.2)
+  border-left: 1.1em solid #084fa7
+  border-radius: 50%
+  animation: load8 .5s infinite linear
+  transition: opacity 0.3s
+
+.loader--hide 
+  opacity: 0
+
+
+@keyframes load8 
+  0% 
+    transform: rotate(0deg)
+  
+  100% 
+    transform: rotate(360deg)
+  
