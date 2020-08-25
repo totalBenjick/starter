@@ -3,7 +3,7 @@ import { HomeCardList } from "./CardList";
 import { listColors } from "../utils/variables";
 
 export const HomeScreen = () => {
-  const { _0, _1, _2 } = listColors;
+  const { _0, _1, _2, _3 } = listColors;
 
   const categoryArray = [
     {
@@ -22,7 +22,13 @@ export const HomeScreen = () => {
       color: _2,
       icon: "fa fa-clock-o",
       cap: "Top Now",
-      link: "watchnow",
+      link: "/trending",
+    },
+    {
+      color: _3,
+      icon: "fa fa-list-ul",
+      cap: "My List",
+      link: "/favorites",
     },
   ];
 
