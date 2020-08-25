@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,10 +8,16 @@ import {
 import { TopBar } from "./TopBar";
 import { HomeScreen } from "../components/HomeScreen";
 import { MostWatched } from "./MostWatched/MostWatched";
-import { TopFans } from "./TopFans";
-import { WatchNow } from "./WatchNow";
+import { TopFans } from "./TopFans/TopFans";
+import { Trending } from "./Trending";
+import { Loader } from "./Loader/Loader";
+import { UserContext } from "../context/UserContext";
+import { SingleView } from "./SingleView/SingleView";
+import { MyList } from "./MyList/MyList";
 
 export const AppRouter = () => {
+  const { loading } = useContext(UserContext);
+  console.log(loading);
   return (
     <Router>
       <div>
@@ -23,11 +29,14 @@ export const AppRouter = () => {
 
             <Route exact path="/mostwatched" component={MostWatched} />
             <Route exact path="/topfans" component={TopFans} />
-            <Route exact path="/watchnow" component={WatchNow} />
+            <Route exact path="/trending" component={Trending} />
+            <Route exact path="/favorites" component={MyList} />
+            <Route path="/tv/:id" component={SingleView} />
 
             <Redirect to="/" />
           </Switch>
         </div>
+        {loading && <Loader />}
       </div>
     </Router>
   );
