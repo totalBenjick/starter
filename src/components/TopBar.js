@@ -23,9 +23,6 @@ export const TopBar = () => {
               TV Series App
             </Link>
           </div>
-          <Link to={"/"} className={"no-underline self-center"}>
-            <i className="fa fa-bars white self-center" aria-hidden="true"></i>
-          </Link>
         </div>
       </div>
     </header>
