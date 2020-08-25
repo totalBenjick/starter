@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 export const useFetch = (url) => {
-  const { loading, setLoading } = useContext(UserContext);
+  const { setLoading } = useContext(UserContext);
   const isMounted = useRef(true);
   const [state, setState] = useState({
     data: null,
@@ -16,6 +16,7 @@ export const useFetch = (url) => {
     };
   }, []);
 
+  // eslint-disable-next-line
   useEffect(() => {
     setState({ data: null, loading: true, error: null });
     setLoading(true);
@@ -32,6 +33,7 @@ export const useFetch = (url) => {
         }
         setLoading(false);
       });
+    // eslint-disable-next-line
   }, [url]);
 
   return state;
