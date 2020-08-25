@@ -17,7 +17,6 @@ import { MyList } from "./MyList/MyList";
 
 export const AppRouter = () => {
   const { loading } = useContext(UserContext);
-  console.log(loading);
   return (
     <Router>
       <div>
@@ -27,9 +26,9 @@ export const AppRouter = () => {
           <Switch>
             <Route exact path="/" component={HomeScreen} />
 
-            <Route exact path="/mostwatched" component={MostWatched} />
-            <Route exact path="/topfans" component={TopFans} />
-            <Route exact path="/trending" component={Trending} />
+            <Route exact path="/mostwatched/:page" component={MostWatched} />
+            <Route exact path="/topfans/:page" component={TopFans} />
+            <Route exact path="/trending/:page" component={Trending} />
             <Route exact path="/favorites" component={MyList} />
             <Route path="/tv/:id" component={SingleView} />
 
